@@ -25,7 +25,7 @@ const generationConfig = {
 
 function TweetInput() {
   const [tweet, setTweet] = useState("");
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState("Pidgin");
   const [comeback, setComeback] = useState("");
   const [loading, setLoading] = useState(false);
   const [instruction, setInstruction] = useState('');
@@ -54,7 +54,7 @@ function TweetInput() {
       history: [],
     });
 
-    const result = await chatSession.sendMessage(`reply this bully tweet: ${tweet} using ${language}`);
+    const result = await chatSession.sendMessage(`give this person a harder insult: ${tweet} using ${language} or ${language} proverb`);
     setComeback(result.response.text());
     setLoading(false);
   };
@@ -79,8 +79,8 @@ function TweetInput() {
         value={language}
         onChange={(e) => setLanguage(e.target.value)}
       >
-        <option value="English">English</option>
         <option value="Pidgin">Pidgin</option>
+        <option value="English">English</option>
         <option value="Yoruba">Yoruba</option>
       </select>
 
@@ -113,7 +113,7 @@ function TweetInput() {
             ></path>
           </svg>
         )}
-        {loading ? "Cooking..." : "Cook that MF!"}
+        {loading ? "Let him cook..." : "Cook that MF!"}
       </button>
 
       {comeback && (
