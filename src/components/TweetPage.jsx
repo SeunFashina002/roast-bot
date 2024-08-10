@@ -40,7 +40,7 @@ function TweetInput() {
 
   const generateComeback = async () => {
     setLoading(true);
-
+    
     const model = genAI.getGenerativeModel({
         model: "gemini-1.5-pro",
         safetySettings,
@@ -54,7 +54,7 @@ function TweetInput() {
       history: [],
     });
 
-    const result = await chatSession.sendMessage(`give this person a harder insult: ${tweet} using ${language} or ${language} proverb`);
+    const result = await chatSession.sendMessage(`roast this bully: ${tweet} using ${language} or ${language} proverb`);
     setComeback(result.response.text());
     setLoading(false);
   };
