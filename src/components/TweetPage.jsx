@@ -40,7 +40,7 @@ function TweetInput() {
 
   const generateComeback = async () => {
     setLoading(true);
-    
+
     const model = genAI.getGenerativeModel({
         model: "gemini-1.5-pro",
         safetySettings,
@@ -69,7 +69,7 @@ function TweetInput() {
       <textarea
         className="w-full p-3 mb-4 border rounded-md"
         rows="5"
-        placeholder="Paste the tweet here..."
+        placeholder="Paste the bully tweet here: e.g You are too ugly to be called Angela..."
         value={tweet}
         onChange={(e) => setTweet(e.target.value)}
       ></textarea>
