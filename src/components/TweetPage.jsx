@@ -53,15 +53,6 @@ function TweetInput() {
   const [language, setLanguage] = useState("Pidgin");
   const [comeback, setComeback] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [instruction, setInstruction] = useState('');
-
-  // useEffect(() => {
-  //   fetch('/si.txt')
-  //     .then(response => response.text())
-  //     .then(text => {
-  //       setInstruction(text);
-  //     });
-  // }, []);
 
   const generateComeback = async () => {
     setLoading(true);
@@ -87,7 +78,7 @@ function TweetInput() {
     });
 
     const result = await chatSession.sendMessage(`Give me a better comeback for this tweet using ${language} or ${language} proverb in two sentences.
-    Tweet  : ${tweet}`);
+    Tweet  : ${tweet} 😂`);
     setComeback(result.response.text());
     setLoading(false);
   };
